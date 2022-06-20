@@ -17,7 +17,7 @@ for (let i = 0; i < images.length; i++){
 
     // Create the image element and set the src attribute
     const carouselImage = document.createElement("img");
-    carouselImage.setAttribute("src", images[0]);
+    carouselImage.setAttribute("src", images[i]);
 
     // Give the appropriate classes to the element
     // If the element is the first one, give it the additional "active" class
@@ -33,12 +33,20 @@ for (let i = 0; i < images.length; i++){
 
 // Initialize the index and the buttons
 
-let activeImage = 0;
+let activeImageIndex = 0;
+const imageList = carouselWrapper.children;
 const nextButton = document.getElementById("button-next");
 const prevButton = document.getElementById("button-prev");
 
 nextButton.addEventListener("click", function(){
-    console.log("clickato next")
+    
+    // Remove the "active" class from the current image
+    imageList[activeImageIndex].classList.remove("active");
+    // Advanced the activeImage counter
+    activeImageIndex++;
+    // Add the "active" class to the following image
+    imageList[activeImageIndex].classList.add("active");
+
 })
 
 prevButton.addEventListener("click", function(){
