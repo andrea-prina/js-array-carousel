@@ -50,7 +50,12 @@ nextButton.addEventListener("click", function(){
 })
 
 prevButton.addEventListener("click", function(){
-    console.log("clickato prev")
+    // Remove the "active" class from the current image
+    imageList[activeImageIndex].classList.remove("active");
+    // Decrement the activeImage counter
+    activeImageIndex--;
+    // Add the "active" class to the previous image
+    imageList[activeImageIndex].classList.add("active");
 })
 
 
