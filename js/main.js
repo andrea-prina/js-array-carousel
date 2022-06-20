@@ -1,3 +1,4 @@
+// Import the images that will be displayed in the carousel
 const images = [
     'https://cdn.photographycourse.net/wp-content/uploads/2022/04/Portrait-vs-Landscape-Featured-Image-3.jpg',
     'https://i.natgeofe.com/n/2a832501-483e-422f-985c-0e93757b7d84/6.jpg',
@@ -7,15 +8,27 @@ const images = [
     'https://mymodernmet.com/wp/wp-content/uploads/2020/02/Landscape-Photographer-of-the-Year-Sander-Grefte.jpg'
     ];
 
+
 const carouselWrapper = document.getElementById("carousel-wrap");
 
-const carouselImage = document.createElement("img");
+// For each image in the list, create an img element and append it to the carousel
 
-carouselImage.setAttribute("src", images[0]);
-carouselImage.classList.add("ms_carousel-imgs");
+for (let i = 0; i < images.length; i++){
 
-// console.log(carouselWrapper);
-// console.log(carouselImage);
+    // Create the image element and set the src attribute
+    const carouselImage = document.createElement("img");
+    carouselImage.setAttribute("src", images[0]);
 
-carouselWrapper.append(carouselImage);
+    // Give the appropriate classes to the element
+    // If the element is the first one, give it the additional "active" class
+    carouselImage.classList.add("ms_carousel-imgs");
+    if (i === 0){
+        carouselImage.classList.add("active");
+    }
+
+    // Add the element to the carousel wrapper element
+    carouselWrapper.append(carouselImage);
+
+}
+
 
