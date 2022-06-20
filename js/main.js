@@ -31,4 +31,19 @@ for (let i = 0; i < images.length; i++){
 
 }
 
+// Initialize the index and the buttons
+
+let activeImage = 0;
+const nextButton = document.getElementById("button-next");
+const prevButton = document.getElementById("button-prev");
+
+nextButton.addEventListener("click", function(){
+    console.log("clickato next")
+})
+
+prevButton.addEventListener("click", function(){
+    console.log("clickato prev")
+})
+
+
 
