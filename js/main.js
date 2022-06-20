@@ -44,6 +44,10 @@ nextButton.addEventListener("click", function(){
     imageList[activeImageIndex].classList.remove("active");
     // Advanced the activeImage counter
     activeImageIndex++;
+    // if activeImageIndex > number of images ( >= array length) restart from 0
+    if (activeImageIndex === imageList.length){
+        activeImageIndex = 0;
+    }
     // Add the "active" class to the following image
     imageList[activeImageIndex].classList.add("active");
 
@@ -54,6 +58,10 @@ prevButton.addEventListener("click", function(){
     imageList[activeImageIndex].classList.remove("active");
     // Decrement the activeImage counter
     activeImageIndex--;
+    // if activeImageIndex < 0 restart from last one
+    if (activeImageIndex < 0){
+        activeImageIndex = imageList.length - 1;
+    }
     // Add the "active" class to the previous image
     imageList[activeImageIndex].classList.add("active");
 })
