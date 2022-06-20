@@ -12,3 +12,15 @@
 .ms_carousel-imgs.active {
     display: block;
 }
+
+.thumb-item {
+    border-radius: 50%;
+    border: 1px solid steelblue;
+    width: 20px;
+    height: 20px;
+    margin: 0px 10px;
+}
+
+.thumb-item.active {
+    border: 5px solid lightblue;
+}
